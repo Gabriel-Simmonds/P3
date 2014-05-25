@@ -51,12 +51,10 @@
     gsub2: A function which loops through the length of a vector, and replaces characters in a data frame 
     using the gsub function
     
-    key: The first column of the activityLabels data frame
-    value: The second column of the activityLabels data frame
-    
-    ## substitute the second column of the dataT data frame by matching the 
-    ## current values with key, and then substituting value into this column
-    dataT[, 2] <- value[match(dataT[, 2], key)]
+    key: The first column of the activityLabels data frame, used as the key to the secound column of the dataT
+    data frame
+    value: The second column of the activityLabels data frame, used as the new values of the second column
+    of the dataT data frame
     
     Counta: A loop counter variable used in checking if column names are duplicated in the
     dataT data frame.
