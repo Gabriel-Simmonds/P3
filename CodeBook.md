@@ -1,14 +1,16 @@
 ## CodeBook
 
-    activityLabels: A data frame created from the activity_labels.txt file
+    # activityLabels: A data frame created from the activity_labels.txt file.
     "activity" and "activityName": Column names of the activityLabels data frame
     features: A data frame created from the features.txt file
     
-    subjTest: A data frame created from the subject_test.txt file
+    subjTest: A data frame created from the subject_test.txt file. This file matches rows with individuals 
+    for test set
     yTest: A data frame created from the y_test.txt file
     Xtest: A data frame created from the X_test.txt file
     
-    subjTrain: A data frame created from the subject_train.txt file
+    subjTrain: A data frame created from the subject_train.txt file. This file matches rows with individuals 
+    for train set
     yTrain: A data frame created from the y_train.txt file
     XTrain: A data frame created from the X_train.txt file
     
@@ -82,7 +84,7 @@
     looping through the dataSubset columns, and taking their means
     t: A loop counter to extract the subject from the dataSubset data frame
     tt: A loop counter to extract the activity from the dataSubset data frame
-    dataSet: A data frame created from the dataSubset, containing the column means
+    dataSet: A 180 row by 68 column data frame created from the dataSubset, containing the column means
     of the dataSubset
     
     myColNames: A character column vector created by adding "avg." to each of the dataSubset
