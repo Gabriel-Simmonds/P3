@@ -111,11 +111,11 @@ achieved using a "Countb" counter and a nested loop using variables "t" and "tt"
 means are then assigned to the relevant column in the "dataSet" data frame.
     
 The script than pastes a "avg." string to the beginning of all the column names except 
-columns 1 and 2 in the "dataSubset" data frame, and assigns that to a vector names myColNames. 
+columns 1 and 2 in the "dataSubset" data frame, and assigns that to a vector namef "myColNames". 
 This is meant to denote the means we are calculating in the "dataSet" data frame.
 
-The myColNames vector then has "subject" and "activity" strings added to the beginning of the 
-vector, and column names of teh "dataSet" now take on the values of this resultant myColNames 
+The "myColNames" vector then has "subject" and "activity" strings added to the beginning of the 
+vector, and column names of the "dataSet" now take on the values of this resultant "myColNames" 
 character vector.
 
 Next, the script loads the plyr package, and uses the arrange() function twice to sort the 
