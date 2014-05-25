@@ -33,7 +33,7 @@
     a style where dots replace characters which were noted in the "from" character vector
     
         "-a" is replaced by ".a"
-        "-b" is toreplaced by ".b"
+        "-b" is replaced by ".b"
         "-c" is replaced by ".c"
         "-e" is replaced by ".e"
         "-i" is replaced by ".i"
