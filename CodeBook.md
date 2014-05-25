@@ -73,6 +73,10 @@
     
         ".mean"
         ".std"
+        
+    This will result is a data frame with 1 column with subject data, 1 column with activity data, and 66 
+    columns with mean and standard deviation data. These 66 columns were chosed because they appear to be 
+    pure mean and standard deviation data, and will be used for the calculation of means later in the project
     
     Countb: A loop counter variable used for creating the dataSet data frame, by
     looping through the dataSubset columns, and taking their means
@@ -81,6 +85,6 @@
     dataSet: A data frame created from the dataSubset, containing the column means
     of the dataSubset
     
-    myColNames: A column vector creted by adding "avg." to each of the dataSubset
-    column names, and then adding "subject" and "activity" to the start of that vector.
-    This column vector is then used to name the columns in the dataSet data frame
+    myColNames: A character column vector created by adding "avg." to each of the dataSubset
+    column names to denote that these are means, and then adding "subject" and "activity" to the 
+    start of that vector. This column vector is then used to name the columns in the dataSet data frame
