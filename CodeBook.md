@@ -1,6 +1,6 @@
 ## CodeBook
 
-    # activityLabels: A data frame created from the activity_labels.txt file.
+# activityLabels: A data frame created from the activity_labels.txt file.
     "activity" and "activityName": Column names of the activityLabels data frame
     features: A data frame created from the features.txt file
     
