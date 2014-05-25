@@ -102,69 +102,28 @@ The script also extracts the columns which contain the following strings in the 
     
 This is achieved using the grepl() function.
     
+Now the script creates a "dataSet" data frame with zero rows, and with number of 
+columns equivalent to the number in the "dataSubset" data frame.
+    
+The script then loops through unique values of activity and subject in the "dataSubset" data 
+frame, and takes means of each resultant column from column 3 to the last column. This is 
+achieved using a "Countb" counter and a nested loop using variables "t" and "tt". These 
+means are then assigned to the relevant column in the "dataSet" data frame.
+    
+The script than pastes a "avg." string to the beginning of all the column names except 
+columns 1 and 2 in the "dataSubset" data frame, and assigns that to a vector names myColNames. 
+This is meant to denote the means we are calculating in the "dataSet" data frame.
 
-    
-    ## Create dataSubset data frame by extracting only those columns which 
-    ## contain the following strings "subject", "activity", ".mean.", ".std.", 
-    ## or end with the following strings ".mean" or ".std" in the dataT 
-    ## data frame
-    dataSubset <- 
-    dataT[, grepl("subject|activity|\\.mean$|\\.std$|\\.mean\\.|\\.std\\.", 
-                 colnames(dataT))]
-    
-    ## Create a dataSet data frame with zero rows and the same number of columns
-    ## as the dataSubset data frame
-    dataSet <- data.frame(matrix(0, ncol = ncol(dataSubset), nrow = 0))
-    
-    ## Create a Countb variable and set equal to 1
-    Countb <- 1
-    ## Loop through the subject column in the dataSubset data frame
-    for (t in unique(dataSubset$subject)){
-        ## Loop through the activity column in the dataSubset data frame
-        for (tt in unique(dataSubset$activity)){
-            ## Assign the column means from the dataSubset data frame to the 
-            ## dataSet dataframe from column 3 onwards
-            dataSet[Countb, 3:ncol(dataSubset)] <- colMeans(dataSubset[(
-            dataSubset$subject == t & dataSubset$activity == tt), 3:ncol(
-                dataSubset)])
-            ## Use the subject value and assign to column 1 of dataSet data 
-            ## frame, row by row
-            dataSet[Countb, 1] <- t
-            ## Use the activity value and assign to column 2 of dataSet data 
-            ## frame, row by row
-            dataSet[Countb, 2] <- tt
-            ## Increase the value of the Countb counter by 1 as part of the
-            ## loop process
-            Countb <- Countb + 1
-        }
-    }
-    
-    ## Take the column names vector from the dataSubset data frame and paste 
-    ## "avg" with a "." separator to the beginning of each column name
-    myColNames <- paste("avg", colnames(dataSubset[3:ncol(dataSubset)]), 
-                        sep = ".")
-    
-    ## Add "subject" and "activity" as the first two members of the myColNames
-    ## vector
-    myColNames <- c("subject", "activity", myColNames)
-    
-    ## Assign the myColNames vector to the column names of the dataSet data 
-    ## frame
-    colnames(dataSet) <- myColNames
-    
-    ## Load the plyr package
-    library(plyr)
-    ## Use arrange function to sort the dataSet data frame according to the 
-    ## activity column
-    dataSet <- arrange(dataSet, activity)
-    ## Now use arrange function to sort the dataSet data frame according to the 
-    ## subject column
-    dataSet <- arrange(dataSet, subject)
-    
-    ## Write the resulting dataSet data frame to a TAB delimited text file 
-    ## named tidyData.txt
-    write.table(dataSet, "tidyData.txt", sep="\t")
-    
-    ## Print the dataSet data frame in the RStudio console
-    dataSet
-}
+The myColNames vector then has "subject" and "activity" strings added to the beginning of the 
+vector, and column names of teh "dataSet" now take on the values of this resultant myColNames 
+character vector.
+
+Next, the script loads the plyr package, and uses the arrange() function twice to sort the 
+"dataSet" data frame twice, first by value of the "activity" column, and then by value of the 
+"subject" column.
+
+The script then writes the resultant "dataSet" data frame to a TAB delimited text file named 
+"tidyData.txt" in the working directory. 
+
+Finally, the "dataSet" data frame is printed in the console as a visual confirmation that a
+calcualtion has taken place.
