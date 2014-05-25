@@ -59,7 +59,7 @@ by running a complete.cases() function on the "dataT" data frame.
 
 The script then creates two character vectors names "from" and "to" which will be used
 to make changes to the dataT column names so that they comply with the following 
-style guide for varaibles: 
+style guide for variables: 
 https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml#identifiers
 
 Basically, all hyphen and parentheses will be removed from the dataT column names, and 
@@ -126,4 +126,4 @@ The script then writes the resultant "dataSet" data frame to a TAB delimited tex
 "tidyData.txt" in the working directory. 
 
 Finally, the "dataSet" data frame is printed in the console as a visual confirmation that a
-calcualtion has taken place.
+calculation has taken place.
