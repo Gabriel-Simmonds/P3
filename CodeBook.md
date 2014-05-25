@@ -12,12 +12,8 @@
     yTrain: A data frame created from the y_train.txt file
     XTrain: A data frame created from the X_train.txt file
     
-    ## Assign second column of the features data frame as the column names of 
-    ## the XTest data frame
-    colnames(XTest) <- features[, 2]
-    ## Assign second column of the features data frame as the column names of 
-    ## the XTrain data frame
-    colnames(XTrain) <- features[, 2]
+        Assign second column of the features data frame as the column names of the XTest data frame
+        Assign second column of the features data frame as the column names of the XTrain data frame
     
     Test: A data frame created as the column bind of the subjTest and yTest data frames
     "subject" and "activity": Column names of the Test data frame
